@@ -48,6 +48,12 @@ variable "collation" {
   
 }
 
+variable "storage_account_type" {
+
+    type = string
+    default = "Local"
+  
+}
 
 
 variable "dbsize" {

@@ -4,3 +4,4 @@
 **/.terraform.lock.hcl
 **/key.pem
 **/solution/
+**/custom_data.sh

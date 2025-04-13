@@ -59,11 +59,7 @@ locals {
 
     }
 
-    app_gateway_ip = {
 
-      allocation_method = "Static"
-
-    }
   }
 
   nics = {

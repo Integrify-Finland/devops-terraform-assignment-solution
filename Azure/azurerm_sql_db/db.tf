@@ -10,6 +10,7 @@ resource "azurerm_mssql_server" "sql_server" {
 
 resource "azurerm_mssql_database" "sql_database" {
   name      = var.sql_database_name
+  
   server_id = azurerm_mssql_server.sql_server.id
 
   license_type = var.license_type
@@ -24,7 +25,7 @@ resource "azurerm_mssql_database" "sql_database" {
 
   geo_backup_enabled = var.geo_backup_enabled
 
-  storage_account_type = "Local"
+  storage_account_type = var.storage_account_type
 
   
 }

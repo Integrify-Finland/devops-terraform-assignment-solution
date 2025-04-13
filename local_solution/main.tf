@@ -120,6 +120,8 @@ module "sql_db" {
 
   // Create a Server
 
+  collation = "SQL_Latin1_General_CP1_CI_AS"
+
   resource_group_name = module.rg.resource_group.name
 
   location = module.rg.resource_group.location
@@ -134,12 +136,15 @@ module "sql_db" {
 
   dbsize = 1
 
+  zone_redundant = false
 
   // Create a Database
 
-  sql_database_name = "${local.prefix}-db2"
+  sql_database_name = "assignment-sol"
 
   sku_name = "Basic"
+
+  storage_account_type = "Local"
 
 
 }
