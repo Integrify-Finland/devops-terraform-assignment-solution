@@ -18,11 +18,11 @@ resource "azurerm_mssql_database" "sql_database" {
 
   sku_name = var.sku_name
 
-  collation = "SQL_Latin1_General_CP1_CI_AS"
+  collation = var.collation
 
-  zone_redundant = false
+  zone_redundant = var.zone_redundant
 
-  geo_backup_enabled = false
+  geo_backup_enabled = var.geo_backup_enabled
 
   storage_account_type = "Local"
 

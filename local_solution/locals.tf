@@ -48,14 +48,14 @@ locals {
   public_ips = {
     backend_ip = {
 
-     
-      allocation_method   = "Dynamic"
+
+      allocation_method = "Dynamic"
 
     }
 
     frontend_ip = {
 
-      allocation_method   = "Dynamic"
+      allocation_method = "Dynamic"
 
     }
 
@@ -73,7 +73,7 @@ locals {
 
       subnet = "frontend_subnet"
 
-      private_ip_address_allocation =  "Dynamic"
+      private_ip_address_allocation = "Dynamic"
 
       public_ip = "frontend_ip"
 
@@ -85,7 +85,7 @@ locals {
 
       subnet = "backend_subnet"
 
-      private_ip_address_allocation =  "Dynamic"
+      private_ip_address_allocation = "Dynamic"
 
       public_ip = "backend_ip"
 
@@ -97,16 +97,16 @@ locals {
     backendvm = {
 
       nic = "backend_nic"
-      
+
 
     }
 
     frontendvm = {
 
       nic = "frontend_nic"
-      
 
-      
+
+
 
     }
   }
@@ -142,6 +142,6 @@ locals {
   )
 
 
-  
-  
+
+
 }

@@ -27,3 +27,8 @@ variable "tags" {
     default = {}
   
 }
+
+variable "sku" {
+    
+    type = string
+}

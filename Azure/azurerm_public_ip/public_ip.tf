@@ -4,7 +4,7 @@ resource "azurerm_public_ip" "public_ip" {
   resource_group_name = var.resource_group_name
   allocation_method   = var.ip_allocation_method
 
-  sku = "Basic"
+  sku = var.sku
 
   tags = var.tags
 }

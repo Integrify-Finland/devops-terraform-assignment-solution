@@ -80,6 +80,8 @@ module "public_ip" {
 
   source = "../Azure/azurerm_public_ip"
 
+  sku = "Basic"
+
   resource_group_name = module.rg.resource_group.name
 
   location = module.rg.resource_group.location
@@ -87,7 +89,7 @@ module "public_ip" {
   ip_allocation_method = each.value.allocation_method
 
   public_ip_address_name = each.key
-  
+
 }
 
 module "nics" {
@@ -109,7 +111,7 @@ module "nics" {
   network_security_group_id = module.nsg.network_security_group.id
 
   public_ip_address_id = module.public_ip[each.value.public_ip].public_ip.id
-  
+
 }
 
 module "sql_db" {
@@ -139,7 +141,7 @@ module "sql_db" {
 
   sku_name = "Basic"
 
-  
+
 }
 
 module "virtual_machine" {
@@ -166,19 +168,19 @@ module "virtual_machine" {
 
   public_key = tls_private_key.ssh_key.public_key_openssh
 
-  
-    
+
+
 }
 
 module "name" {
 
   source = "../Azure/azurerm_sql_firewall_rule"
 
-    firewall_rule_name = "enable-backend-comm"
+  firewall_rule_name = "enable-backend-comm"
 
-    server_id = module.sql_db.sql_server.id
+  server_id = module.sql_db.sql_server.id
 
-    start_ip_address = module.public_ip["backend_ip"].public_ip.ip_address
+  start_ip_address = module.public_ip["backend_ip"].public_ip.ip_address
 
-    end_ip_address = module.public_ip["backend_ip"].public_ip.ip_address
+  end_ip_address = module.public_ip["backend_ip"].public_ip.ip_address
 }

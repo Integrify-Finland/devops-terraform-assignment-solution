@@ -11,10 +11,15 @@ variable "location" {
 }
 
 variable "custom_data" {
+
+  type = string
+  default = ""
   
 }
 
 variable "computer_name" {
+
+  type = string
   
 }
 
@@ -28,6 +33,8 @@ variable "vm_name" {
 variable "vm_size" {
   type = string
 
+  default = "Standard_D2s_v3"
+
 }
 
 variable "username" {
@@ -38,7 +45,15 @@ variable "username" {
 
 }
 
-variable "storage_account_type" {
+variable "os_disk_caching" {
+
+  type = string
+
+  default = "ReadWrite"
+  
+}
+
+variable "os_disk_storage_account_type" {
 
   type = string
 
@@ -65,9 +80,13 @@ variable "source_image_reference_version" {
 }
 
 variable "public_key" {
+
+  type = string
   
 }
 
 variable "nic_id" {
+
+  type = string
   
 }
