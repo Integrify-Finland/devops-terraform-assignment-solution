@@ -10,12 +10,6 @@ variable "location" {
 
 }
 
-variable "custom_data" {
-
-  type = string
-  default = ""
-  
-}
 
 variable "computer_name" {
 

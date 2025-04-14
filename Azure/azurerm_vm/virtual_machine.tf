@@ -18,8 +18,6 @@ resource "azurerm_linux_virtual_machine" "virtual_machine" {
     storage_account_type = var.os_disk_storage_account_type
   }
 
-  custom_data = var.custom_data
-
   computer_name = var.computer_name
 
   source_image_reference {

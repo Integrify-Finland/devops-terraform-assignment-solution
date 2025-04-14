@@ -161,8 +161,6 @@ module "virtual_machine" {
 
   location = module.rg.resource_group.location
 
-  custom_data = local.custom_data
-
   computer_name = each.key
 
   vm_size = "Standard_D2s_v3"
@@ -177,7 +175,7 @@ module "virtual_machine" {
 
 }
 
-module "name" {
+module "sql_firewall_rule" {
 
   source = "../Azure/azurerm_sql_firewall_rule"
 
