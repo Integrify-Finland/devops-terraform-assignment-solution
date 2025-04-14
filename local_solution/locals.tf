@@ -48,7 +48,6 @@ locals {
   public_ips = {
     backend_ip = {
 
-
       allocation_method = "Dynamic"
 
     }
